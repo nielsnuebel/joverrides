@@ -1,0 +1,132 @@
+<section class="shadow" data-background="{{ site.baseurl }}/images/home_1.jpg" data-state="animationgif">
+    <h1>Startseite</h1>
+</section>
+
+<section class="shadow" data-background="{{ site.baseurl }}/images/php.jpeg">
+    <h1>PHP</h1>
+</section>
+
+<section data-transition="none">
+    <h2 class="noupper">_JEXEC</h2>
+    <pre><code class="hljs php" data-trim data-inline>
+&lt;?php defined('_JEXEC') or die; ?&gt;
+   </code></pre>
+    <aside class="notes">
+    </aside>
+</section>
+
+<section data-transition="none">
+    <h2 class="noupper">_JEXEC</h2>
+    <pre><code class="hljs php" data-trim data-inline>
+&lt;?php <mark class="inline">defined('_JEXEC')</mark> or die; ?&gt;
+   </code></pre>
+    <aside class="notes">
+    </aside>
+</section>
+
+<section data-transition="none">
+    <h2 class="noupper">_JEXEC</h2>
+    <pre><code class="hljs php" data-trim data-inline>
+&lt;?php defined('_JEXEC') or <mark class="inline">die</mark>; ?&gt;
+   </code></pre>
+    <aside class="notes">
+    </aside>
+</section>
+
+<section data-transition="none">
+    <h2 class="noupper">index.php</h2>
+    <pre><code class="hljs php" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    &lt;jdoc:include type="modules" name="debug" /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+   </code></pre>
+    <aside class="notes">
+    </aside>
+</section>
+<section data-transition="none">
+    <h2 class="noupper">index.php</h2>
+    <pre><code class="hljs php" data-trim data-inline>
+&lt;?php defined('_JEXEC') or die; ?&gt;
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    &lt;jdoc:include type="modules" name="debug" /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+   </code></pre>
+    <aside class="notes">
+    </aside>
+</section>
+
+<section data-transition="none">
+    <h2 class="noupper">Sprache und Leserichtung</h2>
+    <pre><code class="hljs php" data-trim data-inline>
+&lt;?php defined('_JEXEC') or die; ?&gt;
+&lt;!doctype html&gt;
+&lt;html lang="&lt?php echo $this->language; ?&gt;" dir="&lt?php echo $this->direction; ?&gt;"&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    &lt;jdoc:include type="modules" name="debug" /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+   </code></pre>
+    <aside class="notes">
+    </aside>
+</section>
+
+<section data-transition="none">
+    <h2 class="noupper">Sprache: de-de</h2>
+    <pre><code class="hljs php" data-trim data-inline>
+&lt;?php defined('_JEXEC') or die; ?&gt;
+&lt;!doctype html&gt;
+&lt;html lang="&lt?php <mark class="inline">echo $this->language;</mark> ?&gt;" dir="&lt?php echo $this->direction; ?&gt;"&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    &lt;jdoc:include type="modules" name="debug" /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+   </code></pre>
+    <aside class="notes">
+    </aside>
+</section>
+
+<section data-transition="none">
+    <h2 class="noupper">Leserichtung: ltr</h2>
+    <pre><code class="hljs php" data-trim data-inline>
+&lt;?php defined('_JEXEC') or die; ?&gt;
+&lt;!doctype html&gt;
+&lt;html lang="&lt?php echo $this->language; ?&gt;" dir="&lt?php <mark class="inline">echo $this->direction;</mark> ?&gt;"&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    &lt;jdoc:include type="modules" name="debug" /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+   </code></pre>
+    <aside class="notes">
+    </aside>
+</section>

@@ -1,0 +1,19 @@
+{
+  "name": "joverrides",
+  "version": "1.0.0",
+  "authors": [
+    "Niels Nübel <niels@niels-nuebel.de>"
+  ],
+  "description": "Files for my presentation ",
+  "license": "MIT",
+  "homepage": "https://github.com/nielsnuebel/joverrides",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "reveal.js": "3.3.0"
+  }
+}

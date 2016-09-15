@@ -1,0 +1,140 @@
+<section>
+    <h2 class="noupper">index.php</h2>
+    <pre class=""><code class="hljs html" data-trim data-fragment>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+
+
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</section>
+<section data-transition="none">
+	<h2 class="noupper">Joomla API jdoc</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    <mark class="inline" style="color: red !important;">&lt;jdoc:include</mark>
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</section>
+<section data-transition="none">
+	<h2 class="noupper">Rendertype</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    &lt;jdoc:include <mark class="inline">type="component"</mark> /&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</section>
+<section data-transition="none">
+	<h2 class="noupper">Message</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    <mark class="inline">&lt;jdoc:include type="message" /&gt;</mark>
+    &lt;jdoc:include type="component" /&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</section>
+
+<section>
+	<h2 class="noupper">Message</h2>
+	<img src="{{ site.baseurl }}/images/message.jpg">
+	<aside class="notes">
+		Hier noch mal unsere Struktur
+	</aside>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Message</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    <mark class="inline">&lt;jdoc:include type="message" /&gt;</mark>
+    &lt;jdoc:include type="component" /&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Head</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    <mark class="inline">&lt;jdoc:include type="head" /&gt;</mark>
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Modules</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    <mark class="inline">&lt;jdoc:include type="modules" name="debug" /&gt;</mark>
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Modulposition Debug</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    &lt;jdoc:include type="modules" <mark class="inline">name="debug"</mark> /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</section>

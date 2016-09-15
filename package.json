@@ -1,0 +1,26 @@
+{
+  "name": "joverrides",
+  "version": "1.0.0",
+  "description": "Presentation about creating Joomla Overrrides",
+  "main": "_site/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nielsnuebel/joverrides.git"
+  },
+  "author": "Niels Nuebel <niels@niels-nuebel.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nielsnuebel/joverrides/issues"
+  },
+  "homepage": "https://github.com/nielsnuebel/joverrides#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2",
+    "gulp-rename": "^1.2.2",
+    "lodash": "^4.14.0"
+  }
+}

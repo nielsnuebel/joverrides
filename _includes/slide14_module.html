@@ -1,0 +1,219 @@
+<section id="module" class="shadow" data-background="{{ site.baseurl }}/images/module.jpeg">
+	<h1>Module</h1>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Module Debug</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    <mark class="inline">&lt;jdoc:include type="modules" name="debug" /&gt;</mark>
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+	<small><i>templates/jday2016/index.php</i></small>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Logo</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    <mark class="inline">&lt;jdoc:include type="modules" name="logo" /&gt;</mark>
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    &lt;jdoc:include type="modules" name="debug" /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+	<small><i>templates/jday2016/index.php</i></small>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Position Logo</h2>
+	<pre class="stretch"><code class="hljs xml" data-trim data-inline>
+&lt;extension version="3.1" type="template" client="site"&gt;
+  &lt;name&gt;jday2016&lt;/name&gt;
+  &lt;creationDate&gt;16.09.2016&lt;/creationDate&gt;
+  &lt;author&gt;Niels Nübel&lt;/author>
+  &lt;authorEmail&gt;niels@niels-nuebel.de&lt;/authorEmail&gt;
+  &lt;authorUrl&gt;http://www.niels-nuebel.de&lt;/authorUrl&gt;
+  &lt;version&gt;0.0.1&lt;/version&gt;
+
+  <files>
+    <filename>index.php</filename>
+    <filename>templateDetails.xml</filename>
+  </files>
+
+  <posititons>
+    <mark class="inline"><position>logo</position></mark>
+    <position>debug</position>
+  </posititons>
+&lt;/extension&gt;
+   </code></pre>
+	<small><i>templates/jday2016/templateDetails.xml</i></small>
+	<aside class="notes">
+	</aside>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Attribute</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;jdoc:include type="modules" name="logo" /&gt;
+</code></pre>
+	<small><i>templates/jday2016/index.php</i></small>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Attribute style</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;jdoc:include type="modules" name="logo" <mark class="inline">style="html5"</mark> /&gt;
+</code></pre>
+	<small><i>templates/jday2016/index.php</i></small>
+</section>
+
+<section>
+	<h2 class="noupper">Modulstile: System Template</h2>
+	<ul>
+		<li>none</li>
+		<li>html5</li>
+		<li>table</li>
+		<li>horz</li>
+		<li>xhtml</li>
+		<li>rounded</li>
+		<li>outline</li>
+	</ul>
+</section>
+
+<section data-background="{{ site.baseurl }}/images/modulestile.gif" data-state="animationgif">
+</section>
+
+<section>
+	<h2 class="noupper">html5</h2>
+	<p>Für Module mit Überschriften</p>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">eigener Modulstil</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;?php
+defined('_JEXEC') or die;
+
+/*
+ * jday
+ */
+function modChrome_<mark class="inline">jday</mark>($module, &$params, &$attribs)
+{
+  echo '&lt;div class="jday"&gt;';
+  echo $module->content;
+  echo '&lt;/div&gt;';
+}
+</code></pre>
+	<small><i>templates/jday2016/html/modules.php</i></small>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Modulstile</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;jdoc:include type="modules" name="logo" <mark class="inline">style="jday"</mark> /&gt;
+</code></pre>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Logo mit Modulstil</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;jdoc:include type="modules" name="logo" <mark class="inline">style="jday"</mark> /&gt;
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    &lt;jdoc:include type="modules" name="debug" /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+	<small><i>templates/jday2016/index.php</i></small>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Logo</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    <mark class="inline">&lt;div class="jday"&gt;</mark>
+    &lt;jdoc:include type="modules" name="logo" /&gt;
+    <mark class="inline">&lt;/div&gt;</mark>
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    &lt;jdoc:include type="modules" name="debug" /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+	<small><i>templates/jday2016/index.php</i></small>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Logo</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    <mark class="inline">&lt;?php if ($this->countModules('logo')) : ?&gt;</mark>
+      &lt;div class="jday"&gt;</mark>
+      &lt;jdoc:include type="modules" name="logo" /&gt;
+      &lt;/div&gt;
+    <mark class="inline">&lt;?php endif; ?&gt;</mark>
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    &lt;jdoc:include type="modules" name="debug" /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+	<small><i>templates/jday2016/index.php</i></small>
+</section>
+
+<section data-transition="none">
+	<h2 class="noupper">Logo</h2>
+	<pre class=""><code class="hljs html" data-trim data-inline>
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;jdoc:include type="head" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php if ($this->countModules('<mark class="inline">logo</mark>')) : ?&gt;
+      &lt;div class="jday"&gt;</mark>
+      &lt;jdoc:include type="modules" name="<mark class="inline">logo</mark>" /&gt;
+      &lt;/div&gt;
+    &lt;?php endif; ?&gt;
+    &lt;jdoc:include type="message" /&gt;
+    &lt;jdoc:include type="component" /&gt;
+    &lt;jdoc:include type="modules" name="debug" /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+	<small><i>templates/jday2016/index.php</i></small>
+</section>
+<section data-background="#76bd1d" data-background-transition="zoom">
+	<h2>&lt;!-- Module --&gt;</h2>
+</section>
