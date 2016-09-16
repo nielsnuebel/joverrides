@@ -1,0 +1,203 @@
+<section>
+    <h2 class="noupper">Komponenten Override</h2>
+    <img src="{{ site.baseurl }}/images/com_1.jpg">
+    <aside class="notes">
+        - meinstens in Komponenten genutzt<br>
+        - Beitrag als Beispiel<br>
+        - Titel andere Headline, Icons, Bild oben statt unten etc.<br>
+        - als erstes müssen wir wissen wo wir sind
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Ansicht / View</h2>
+    <img src="{{ site.baseurl }}/images/com_2.jpg">
+    <aside class="notes">
+        - der erste schrittu um das<br>
+        - welche Ansicht einer Komponente bearbeiten view<br>
+        - Jeder Punkt ist eine View<br>
+        - Jeder Punkt ist eine View außer Kategorie Liste oder Blog
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Prüfen der View</h2>
+    <img src="{{ site.baseurl }}/images/com_3.jpg">
+    <aside class="notes">
+        - schreibgeschütztes Feld Link<br>
+        - ganz rechts scrollt<br>
+        - den englischen original Name in unserem Fall article<br>
+        - notieren
+    </aside>
+</section>
+<section>
+    <h2 class="noupper">Override Template</h2>
+    <img src="{{ site.baseurl }}/images/com_4.jpg">
+    <aside class="notes">
+        - welches Template soll den Override erhalten<br>
+        - und klickt auf den Templatenamen
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Templatemanager</h2>
+    <img src="{{ site.baseurl }}/images/com_5.jpg">
+    <aside class="notes">
+        - dort auf den Tab Overrides<br>
+        - seit 3.2
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Article wählen</h2>
+    <img src="{{ site.baseurl }}/images/com_6.jpg">
+    <aside class="notes">
+        - wählt die Komponente com_content<br>
+        - taucht article unsere View auf<br>
+        - durch anklicken arbeitet Joomla im hintergrund
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Override wurde erstellt</h2>
+    <img src="{{ site.baseurl }}/images/com_7.jpg">
+    <aside class="notes">
+        - Ausgabe von Joomla das unser Override erstellt wurde<br>
+        - Ordner
+    </aside>
+</section>
+
+<section class="shadow" data-background="{{ site.baseurl }}/images/componentoverride.jpeg">
+    <h1>Override-System!!</h1>
+    <aside class="notes">
+        - klicki bunte Lösung ohne Editor aus Joomla heraus<br>
+        - alles was vor 3.2 war musste noch per Hand kopiert werden.<br>
+        - aber was ist jetzt eigentlich passiert<br>
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Ordner & Dateien</h2>
+    <img src="{{ site.baseurl }}/images/com_8.jpg">
+    <small><i>templates/protostar/html/com_content/article</i></small>
+    <aside class="notes">
+        - Ausgabe von Joomla das unser Override erstellt wurde<br>
+        - interessant ist meinstens default.php<br>
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">default.php</h2>
+    <img src="{{ site.baseurl }}/images/com_9.jpg">
+    <small><i>templates/protostar/html/com_content/article/default.php</i></small>
+    <aside class="notes">
+        - 1:1 kopien der Joomla Core Dateien<br>
+        - die im TEmplate abgelegt werden<br>
+        - wir brauchen nicht mehr am Core fummeln<br>
+        - ablauf wie Joomla prüft, in dem aktiven TEmplate gibt es ein Override, ja nimm das ansonsten das<br>
+        - Update sicher, in der Regel
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Module = Komponenten</h2>
+    <img src="{{ site.baseurl }}/images/com_10.jpg">
+    <aside class="notes">
+        - Module haben das gleiche Prinzip<br>
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">News</h2>
+    <img src="{{ site.baseurl }}/images/com_11.jpg" height="500">
+    <aside class="notes">
+
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Modul Override</h2>
+    <img src="{{ site.baseurl }}/images/com_13.jpg">
+    <small><i>templates/protostar/html/mod_articles_latest</i></small>
+    <aside class="notes">
+        - Module over für latest Artikel<br>
+        - zeige mir die letzten Beiträge in Kategorie XYZ an<br>
+        - default.php umbenannt in news.php<br>
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">news.php</h2>
+    <pre class="stretch"><code class="hljs" data-trim data-inline>
+&lt;div class="span12 latestnews&lt;?php echo $moduleclass_sfx; ?>">
+    &lt;?php foreach ($list as $item) :  ?>
+    &lt;div class="row-fluid">
+        &lt;div class="span4">
+            &lt;?php echo JHtml::_('date', $item->created, 'd.m.Y'); ?>
+        &lt;/div>
+        &lt;div class="span8">
+            &lt;h5>&lt;?php echo $item->title; ?>&lt;/h5>
+        &lt;/div>
+        &lt;div class="span12">
+            &lt;?php echo $item->introtext; ?>
+            &lt;a href="&lt;?php echo $item->link; ?>">&lt;span class="icon-arrow-right">&lt;/span> &lt;?php echo 'Hier erfahren Sie mehr'; ?>&lt;/a>
+        &lt;/div>
+    &lt;/div>
+    &lt;?php endforeach; ?>
+&lt;/div>
+&lt;div class="clearfix">&lt;/div>
+   </code></pre>
+    <small><i>templates/protostar/html/mod_articles_latest/news.php</i></small>
+    <aside class="notes">
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Beiträge in News</h2>
+    <img src="{{ site.baseurl }}/images/com_12.jpg">
+    <aside class="notes">
+        - Module haben das gleiche Prinzip<br>
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Alternatives Layout</h2>
+    <img src="{{ site.baseurl }}/images/com_14.jpg">
+    <aside class="notes">
+        - Module haben das gleiche Prinzip<br>
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">News</h2>
+    <img src="{{ site.baseurl }}/images/com_11.jpg" height="500">
+    <aside class="notes">
+
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Kategorien</h2>
+    <img src="{{ site.baseurl }}/images/com_16.jpg">
+    <aside class="notes">
+        - Glossar
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Beiträge</h2>
+    <img src="{{ site.baseurl }}/images/com_15.jpg" height="500">
+    <aside class="notes">
+
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">Felder?</h2>
+    <img src="{{ site.baseurl }}/images/com_17.jpg">
+    <aside class="notes">
+
+    </aside>
+</section>
+
+

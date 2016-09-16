@@ -1,0 +1,117 @@
+<section class="shadow" data-background="{{ site.baseurl }}/images/jlayouts.jpeg">
+    <h1 class="noupper">JLayout</h1>
+    <aside class="notes">
+        - ist auch schon das letzte<br>
+        - identeischer Code :(
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">JLayout</h2>
+    <img src="{{ site.baseurl }}/images/jlayout_1.jpg">
+    <div class="fragment">
+        <small><i>components/com_content/views/article/tmpl/default.php:66</i></small>
+        <small><i>components/com_content/views/category/tmpl/blog_item.php:26</i></small>
+        <small><i>components/com_content/views/featured/tmpl/default_item.php:48</i></small>
+    </div>
+    <aside class="notes">
+        - Begegnet uns mit Jlaypout ... irgendwas mit Punkten
+        - drucken, bearbeiten icons ausgabe
+    </aside>
+</section>
+<section data-transition="none">
+    <h2 class="noupper">JLayoutHelper</h2>
+    <pre><code class="hljs" data-trim data-inline>
+JLayoutHelper::render('joomla.content.icons', array('params' => $params, 'item' => $this->item, 'print' => false));
+   </code></pre>
+
+    <aside class="notes">
+    </aside>
+</section>
+
+<section data-transition="none">
+    <h2 class="noupper">JLayoutHelper</h2>
+    <pre><code class="hljs" data-trim data-inline>
+JLayoutHelper::render('<mark class="inline">joomla.content.icons</mark>', array('params' => $params, 'item' => $this->item, 'print' => false));
+   </code></pre>
+
+    <aside class="notes">
+    </aside>
+</section>
+
+<section data-transition="none">
+    <h2 class="noupper">JLayoutHelper</h2>
+    <pre><code class="hljs" data-trim data-inline>
+JLayoutHelper::render('joomla<mark class="inline">.</mark>content<mark class="inline">.</mark>icons', array('params' => $params, 'item' => $this->item, 'print' => false));
+   </code></pre>
+    <aside class="notes">
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">JLayout</h2>
+    <img src="{{ site.baseurl }}/images/jlayout_2.jpg">
+    <small><i>layouts/joomla/content/icons.php</i></small>
+    <aside class="notes">
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">JLayout</h2>
+    <img src="{{ site.baseurl }}/images/jlayout_3.jpg">
+    <aside class="notes">
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">JLayoutHelper Ablauf</h2>
+    <pre><code class="hljs" data-trim data-inline>
+JLayoutHelper::render('joomla.content.icons', array('params' => $params, 'item' => $this->item, 'print' => false));
+   </code></pre>
+    <div style="text-align: left; display: block;">
+        <div><small>1. templates/meintemplate/html/layouts/<span class="fragment highlight-red">com_content</span>/joomla/content/icons.php</small></div>
+        <div class="fragment"><small>2. components/com_content/layouts/joomla/content/icons.php</small></div>
+        <div class="fragment"><small>3. templates/meintemplate/html/layouts/joomla/content/icons.php</small></div>
+        <div class="fragment"><small>4. layouts/joomla/content/icons.php</small></div>
+    </div>
+
+    <aside class="notes">
+        - seit 3.2 sucht an 4 Stellen
+        -
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">JLayoutHelper Alternative</h2>
+    <pre><code class="hljs" data-trim data-inline>
+$version = new JVersion;
+
+$layout = new <mark class="inline">JLayoutFile</mark>('joomla.content.icons', null,
+  array (
+    'suffixes' = array(
+        'j' . $version->getShortVersion(),
+        'j' . $version->RELEASE,
+        'j' . substr($version->RELEASE, 0, 1)
+    )
+  )
+);
+   </code></pre>
+    <aside class="notes">
+        - neue Instance von JLayoutFile zu übergeben
+        - layoutID, basePath, options als array dort eine option der suffixes
+    </aside>
+</section>
+
+<section>
+    <h2 class="noupper">JLayout Suffixes</h2>
+    <div style="text-align: left; display: block;">
+        <div>joomla/content/icons.<span style="color: #ffc926;">j3.3.3</span>.php</div>
+        <div>joomla/content/icons.<span style="color: #ffc926;">j3.3</span>.php</div>
+        <div>joomla/content/icons.<span style="color: #ffc926;">j3</span>.php</div>
+        <div>joomla/content/icons.php</div>
+    </div>
+    <aside class="notes">
+        - Jlayout such in jedem der vier Ordner nicht mehr nach icons.php sondern prüft ob es eine Datei mit Suffix gibt<br>
+        - als Entwickler kann ich dann Versions abhängig unterschiedliche Ausgaben erstellen
+    </aside>
+</section>
