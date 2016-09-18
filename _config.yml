@@ -11,7 +11,7 @@ description: ""
 author: "Niels Nübel"
 baseurl: ""
 url: "http://joverrides.niels-nuebel.de"
-googleanalyticss:  UA-83736439-1
+googleanalyticss:  UA-83736439-2
 
 # Build settings
 markdown: kramdown
